@@ -1,0 +1,138 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    position: relative;
+}
+
+&::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%; 
+    background-image: url('images/background.jpg');
+    background-repeat: repeat;
+    background-size: cover;
+    opacity: 0.05; /* Adjust the opacity value as needed */
+
+  }
+
+#search-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#results-list li {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#results-list li:hover {
+    background-color: #efefef;
+}
+
+#details-sidebar {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    display: none;
+}
+
+#extract-form {
+  display: none;
+}
+
+ #loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  #loading-spinner {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .help {
+    width: 40px;
+    margin: 0 auto;
+  }
+  
+  .help .question {
+    height: 40px;
+    width: 40px;
+    background: #ccc;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: 40px;
+  }
+  
+  .help .popup{
+    width: 560px;
+    height: 0px;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    background: #eee;
+    opacity: 0;
+    transition: 1s;
+    left: -260px;
+    top: 10px;
+  }
+  
+  
+  .help:hover .popup {
+    opacity: 1;
+    height: 400px;
+  }
+  
+  .help .popup p {
+    font-size: 16px;
+    padding: 10px;
+    margin: 0;
+  }
+  
+  .help .popup.sub-levels {
+    padding: 0 0 10px 140px;
+  }
+  
+  .help .popup .sub-levels strong {
+    font-size: 20px;
+  }
+  
+  .help .popup p:nth-child(5) {
+    padding: 20px 0 0 10px;
+  }
+  
+  
+

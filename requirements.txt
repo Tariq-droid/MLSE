@@ -1,0 +1,9 @@
+pandas
+numpy
+Flask
+opencv-python
+pickle
+scikit-learn
+pyodbc
+logging
+base64

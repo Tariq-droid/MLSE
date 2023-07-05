@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Engine</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/animate.min.css">
+    <link rel="stylesheet" href="/static/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="help animate__animated animate__fadeInDown">
+
+        <div class="question">?</div>
+
+        <div class="popup">
+          <p><strong>How to use?</strong> Use the search bar to search for a person based on any of the traits that show in the <strong>details</strong> section.</p>
+          <p><strong>What are these metrics?</strong> <br>	
+            <strong>Similarity</strong> shows how similar your query is to the full record. <br> 
+            <strong>Any Match</strong> is true when any of the keywords written match a part of the record.<br>
+            <strong>Full Match</strong> is true when all the keywords written match a record.</p>
+          <p><strong>Extraction:</strong><br>
+             1- Choose the date range or leave empty for all dates <br>
+             2- Choose the system to extract from <br>
+             3- Choose the extraction type <br>
+             &emsp;3.1 <strong>Extract Selection</strong> will extract the items <strong>checked</strong><br>
+             &emsp;3.2 <strong>Extract Any Matches</strong> will extract items that have <strong>Any Match</strong> as <strong>true</strong><br>
+             &emsp;3.3 <strong>Extract Full Matches</strong> will extract items that have <strong>Full Match</strong> as <strong>true</strong></p>
+        </div>
+
+      </div>
+
+    <div class="container">
+
+        <h1 class="text-center mt-5 mb-5 animate__animated animate__fadeInDown">Search Engine V2</h1>
+
+        <form id="search-form" class="animate__animated animate__fadeInDown">
+            <div class="input-group">
+                <input type="text" id="query" name="query" class="form-control" placeholder="Enter your search query">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <ul id="results-list" class="list-unstyled"></ul>
+            </div>
+
+            <aside class="col-md-6 animate__animated animate__fadeInRight" id="details-sidebar">
+                <h2>Details</h2>
+                <div id="details-content"></div>
+            </aside>
+        </div>
+
+        <form id="extract-form" action="/extract" method="post" class="mt-5 animate__animated animate__fadeInUp">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="start_date">Start Date:</label>
+                    <input type="datetime-local" id="start_date" name="start_date" class="form-control">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="end_date">End Date:</label>
+                    <input type="datetime-local" id="end_date" name="end_date" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="table">Select a table:</label>
+                <select id="table" name="table" class="form-control">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="extraction">Extraction Type:</label>
+                <select id="extraction" name="extraction" class="form-control">
+                    <option value="selection">Extract Selection</option>
+                    <option value="any">Extract Any Matches</option>
+                    <option value="full">Extract Full Matches</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="extract-button">Extract</button>
+        </form>
+        
+    </div>
+    
+    <script src="/static/js/scripts.js"></script>
+</body>
+</html>
