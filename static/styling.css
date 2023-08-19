@@ -1,0 +1,210 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400; /* Bold weight */
+    overflow-y: auto; /* Allow vertical scrolling */
+    background: linear-gradient(to right, #363636, #3e3e3e);
+    background-image: url('images/scribbles.jpg');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;  /* <-- added this */
+    align-items: center;
+    justify-content: center;
+}
+
+body select, body input, body textarea, body button {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400; /* Bold weight */
+}
+
+h1 {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700; /* Bold weight */
+    font-size: 4.5em; /* Increase font size */
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Add text shadow */
+    letter-spacing: 1.5px; /* Adjust letter spacing */
+    padding: 10px 20px; /* Padding around the text */
+    border-radius: 8px; /* Rounded corners for the background */
+    margin: 20px 0; /* Space above and below the h1 */
+}
+
+
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+    box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.7);
+    padding: 20px 40px;
+    width: 100%;
+    height: 35%;
+    max-width: 600px;
+    max-height: 600px;
+    margin-bottom: 100px;
+}
+
+select, input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    outline: none;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+select:focus, input:focus, textarea:focus {
+    box-shadow: 0 0 10px rgba(33,150,243, 0.4);
+    transform: translateY(-3px);
+}
+
+button {
+    background-color: #2196F3;
+    color: #fff;
+    cursor: pointer;
+    transform: translateY(0);
+}
+
+button:hover {
+    background-color: #1976D2;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+#outputText {
+    font-size: 13px; /* Increase font size */
+
+} 
+.toggle-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.toggle-btn {
+    flex: 1;
+    margin-right: 10px;
+    background-color: #ddd;
+    transition: background-color 0.3s;
+}
+
+.toggle-btn:last-child {
+    margin-right: 0;
+}
+
+.toggle-btn.active {
+    background-color: #2196F3;
+    color: #fff;
+}
+
+/* @keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    0% { border-color: transparent; }
+    50% { border-color: #2196F3; }
+    100% { border-color: transparent; }
+}
+
+.typewritten {
+    overflow: hidden; 
+    border-right: 2px solid #2196F3; 
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 1.5px; 
+    animation: typewriter 3s steps(30, end), blink 0.5s step-end infinite; 
+} */
+
+
+
+.typewritten::after {
+    content: "|";  /* This is your cursor */
+    color: #2196F3;
+    animation: blink 1.0s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* Login/Register Links */
+.auth-links {
+    position: fixed;
+    top: 20px;
+    right: 140px;
+    z-index: 2;
+    font-size: 28px;
+}
+
+.auth-link {
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 10px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-overlay p {
+    font-size: 2em;
+    color: #fff;
+}
